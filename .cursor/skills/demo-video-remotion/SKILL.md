@@ -19,7 +19,9 @@ description: Plans and builds product demo videos, explainers, and motion graphi
 3. **Composition** — Remotion project or folder in workspace
 4. **Render** — `npx remotion render`
 
-Load skill **`remotion-best-practices`** for all implementation details.
+Load skills **`vinayak-remotion-video`** (motion taste, pacing, layout) and **`remotion-best-practices`** (Remotion API, rendering, fonts).
+
+**Stack:** `demo-video-remotion` → script/storyboard → `vinayak-remotion-video` → `remotion-best-practices` → render.
 
 ## Scene structure
 

@@ -32,7 +32,7 @@ A version-controlled **Cursor AI configuration** for design and deliverables: **
 | Aspect | Value |
 |--------|-------|
 | **Mode** | Design & deliverables — not backend engineering |
-| **Custom skills** | 5 (pitch, presentation, consulting, carousel, demo video) |
+| **Custom skills** | 6 (pitch, presentation, consulting, carousel, demo video, Remotion motion) |
 | **Vendored skills** | 6 (Remotion, impeccable, GSAP, etc.) |
 | **Brand docs** | Stamped Energy + Content OS in `design-systems/` |
 | **Default outputs** | `outputs/` (pptx, png, mp4, outlines) |
@@ -52,7 +52,7 @@ Open this repo in Cursor when you want to:
 
 | Item | Count / detail |
 |------|----------------|
-| Pre-installed skills | **11** |
+| Pre-installed skills | **12** |
 | Rules | **4** (`design-mode`, `design-stack`, `skill-routing`, `presentation-quality-gates`) |
 | Design system files | **3** + README |
 | Presentation playbook | [docs/PRESENTATION_PLAYBOOK.md](docs/PRESENTATION_PLAYBOOK.md) |
@@ -88,7 +88,8 @@ Tell the agent: *"Use Stamped Energy brand from design-systems"* or *"Content OS
 | `management-consultant-deck` | McKinsey/BCG/Bain pyramid storyline — action titles, MECE, exhibits |
 | `presentation-architect` | Business-grade PPTXGenJS build — charts, speaker notes, visual QA |
 | `carousel-architect` | Article → hook + slides → 1080×1350 PNG (Satori/Resvg) |
-| `demo-video-remotion` | Script → storyboard → Remotion MP4 |
+| `demo-video-remotion` | Script → storyboard → Remotion render plan |
+| `vinayak-remotion-video` | Premium motion craft — settle-then-hold, SCALE, springs, layout |
 
 ### Pre-installed (vendored)
 
@@ -210,8 +211,9 @@ Content OS brand. Export PNGs to outputs/carousel/.
 ### Product demo video
 
 ```text
-Use demo-video-remotion + remotion-best-practices.
-60-second walkthrough of Content OS discovery → draft flow. Stamped Orange accent.
+Use demo-video-remotion for script/storyboard, vinayak-remotion-video for motion architecture,
+then remotion-best-practices for implementation.
+30s launch trailer, Content OS brand, settle-then-hold — no idle drift after entrances.
 ```
 
 ---
@@ -249,7 +251,8 @@ Requires Windows junction support (Developer Mode or Admin).
 | Business PowerPoint | `presentation-architect` + `deck-theme.ts` |
 | Presentation quality bar | `business-deck-standards.md` + `presentation-quality-gates` |
 | Instagram/LinkedIn carousel | `carousel-architect` |
-| Demo MP4 | `demo-video-remotion` |
+| Demo MP4 / launch trailer | `demo-video-remotion` → `vinayak-remotion-video` → `remotion-best-practices` |
+| Remotion motion taste | `vinayak-remotion-video` |
 | Stamped Energy colors | `design-systems/stamped-energy-main-website.md` |
 | Content OS UI look | `design-systems/content-os.md` |
 | Polish layout | `impeccable` |

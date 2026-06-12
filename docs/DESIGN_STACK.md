@@ -38,9 +38,13 @@ await pptx.writeFile({ fileName: "deck.pptx" });
 
 ### Remotion — demo video
 
-**When:** MP4/WebM, motion graphics, animated walkthroughs.
+**When:** MP4/WebM, motion graphics, launch trailers, animated walkthroughs.
 
-Skill: `remotion-best-practices` (pre-installed).
+Skills (in order):
+
+1. `demo-video-remotion` — script, storyboard, scene list
+2. `vinayak-remotion-video` — motion taste, pacing, layout (`SCALE`, settle-then-hold, springs)
+3. `remotion-best-practices` — Remotion API, rendering, fonts
 
 ```bash
 npx create-video@latest --yes --blank my-demo

@@ -12,6 +12,7 @@ alwaysApply: false
 | Business PPT, slides, PowerPoint (general) | `presentation-architect` |
 | Sales deck, board update, internal business update | `presentation-architect` (+ consulting skill if strategy-heavy) |
 | LinkedIn / Instagram carousel | `carousel-architect` |
-| Product demo video, explainer MP4 | `demo-video-remotion` + `remotion-best-practices` |
+| Product demo video, explainer MP4, launch trailer, social clip | `demo-video-remotion` + `vinayak-remotion-video` + `remotion-best-practices` |
+| Premium Remotion motion / layout / pacing craft | `vinayak-remotion-video` + `remotion-best-practices` |
 | Polish existing UI | `impeccable` |
 | Map design docs / content | `graphify` on `design-systems/` or brief folder |

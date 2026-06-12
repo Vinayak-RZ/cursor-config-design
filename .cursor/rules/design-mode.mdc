@@ -15,7 +15,7 @@ Default outputs: **visual assets and documents** — not production backend unle
 | Consulting / strategy | `management-consultant-deck` → `presentation-architect` | storyline + pptx |
 | Business PowerPoint | `presentation-architect` | `outputs/*.pptx` via PPTXGenJS |
 | Social carousel | `carousel-architect` | `outputs/carousel/*.png` |
-| Demo video | `demo-video-remotion` | Remotion + MP4 |
+| Demo video / launch trailer | `demo-video-remotion` → `vinayak-remotion-video` → `remotion-best-practices` | Remotion + MP4 |
 | UI polish | `impeccable` | audit + CSS fixes |
 
 ## Pipeline default

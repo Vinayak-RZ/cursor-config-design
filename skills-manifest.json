@@ -1,14 +1,15 @@
 {
-  "version": 2,
+  "version": 3,
   "description": "Design Cursor config — business presentations, pitch decks, consulting decks, carousels, Remotion video",
   "preinstalled_skills": {
-    "count": 11,
+    "count": 12,
     "custom": [
       "pitch-deck-architect",
       "presentation-architect",
       "management-consultant-deck",
       "carousel-architect",
-      "demo-video-remotion"
+      "demo-video-remotion",
+      "vinayak-remotion-video"
     ],
     "vendored": [
       "remotion-best-practices",
@@ -32,6 +33,12 @@
       "templates/deck-outlines/consulting-deck.md"
     ],
     "playbook": "docs/PRESENTATION_PLAYBOOK.md"
+  },
+  "video": {
+    "planning_skill": "demo-video-remotion",
+    "motion_skill": "vinayak-remotion-video",
+    "implementation_skill": "remotion-best-practices",
+    "reference": ".cursor/skills/vinayak-remotion-video/reference.md"
   },
   "design_systems": [
     "design-systems/stamped-energy-main-website.md",

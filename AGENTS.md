@@ -17,9 +17,12 @@ You are in **design & deliverables mode**: business presentations, pitch decks, 
 | `management-consultant-deck` | McKinsey/BCG/Bain consulting storyline |
 | `presentation-architect` | Business-grade PPTXGenJS `.pptx` + speaker notes |
 | `carousel-architect` | Social PNG carousels (Satori/Resvg) |
-| `demo-video-remotion` | Product demo videos |
+| `demo-video-remotion` | Product demo videos — script, storyboard, render plan |
+| `vinayak-remotion-video` | Premium Remotion motion, layout, pacing (settle-then-hold, SCALE, springs) |
 
 **Deck workflow:** storyline skill first → user approval → `presentation-architect` → quality gates.
+
+**Video workflow:** `demo-video-remotion` → `vinayak-remotion-video` → `remotion-best-practices` → render.
 
 ## Skills (pre-installed)
 
