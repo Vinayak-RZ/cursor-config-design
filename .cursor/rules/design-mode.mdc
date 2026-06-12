@@ -11,8 +11,9 @@ Default outputs: **visual assets and documents** — not production backend unle
 
 | Type | Primary skill | Output |
 |------|---------------|--------|
-| PowerPoint | `presentation-architect` | `outputs/*.pptx` via PPTXGenJS |
-| Consulting deck | `management-consultant-deck` → `presentation-architect` | storyline + pptx |
+| Investor pitch | `pitch-deck-architect` → `presentation-architect` | outline + `outputs/pitch/deck.pptx` |
+| Consulting / strategy | `management-consultant-deck` → `presentation-architect` | storyline + pptx |
+| Business PowerPoint | `presentation-architect` | `outputs/*.pptx` via PPTXGenJS |
 | Social carousel | `carousel-architect` | `outputs/carousel/*.png` |
 | Demo video | `demo-video-remotion` | Remotion + MP4 |
 | UI polish | `impeccable` | audit + CSS fixes |
@@ -28,3 +29,7 @@ Markdown → structure → layout → design tokens → generate (PPTX / PNG / R
 For Stamped Energy or Content OS work, read the matching file in `design-systems/` before choosing colors and typography.
 
 Save work under `outputs/` unless the user specifies a project path.
+
+## Presentation quality
+
+Before delivering any deck, apply `.cursor/rules/presentation-quality-gates.mdc` and [business-deck-standards](../skills/presentation-architect/references/business-deck-standards.md). Playbook: [docs/PRESENTATION_PLAYBOOK.md](../../docs/PRESENTATION_PLAYBOOK.md).

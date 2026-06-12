@@ -7,8 +7,10 @@ alwaysApply: false
 
 | User intent | Skill |
 |-------------|-------|
-| Pitch deck, slides, PPT, PowerPoint | `presentation-architect` |
-| McKinsey/BCG style strategy deck | `management-consultant-deck` then `presentation-architect` |
+| Investor pitch, fundraising, demo day, accelerator deck | `pitch-deck-architect` then `presentation-architect` |
+| McKinsey/BCG/Bain consulting, strategy, board, DD, RFP | `management-consultant-deck` then `presentation-architect` |
+| Business PPT, slides, PowerPoint (general) | `presentation-architect` |
+| Sales deck, board update, internal business update | `presentation-architect` (+ consulting skill if strategy-heavy) |
 | LinkedIn / Instagram carousel | `carousel-architect` |
 | Product demo video, explainer MP4 | `demo-video-remotion` + `remotion-best-practices` |
 | Polish existing UI | `impeccable` |

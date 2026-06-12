@@ -1,48 +1,90 @@
 ---
 name: management-consultant-deck
-description: Structures client-facing decks using pyramid principle and consulting storyline — Executive Summary, Problem, Analysis, Insights, Recommendations, Next Steps. Use for strategy decks, board updates, and proposals where McKinsey/BCG/Bain clarity is required.
+description: Builds McKinsey/BCG/Bain-grade consulting decks — pyramid principle, action titles, MECE structure, exhibits, and board-ready recommendations. Use for strategy presentations, client proposals, due diligence, board updates, and professional services deliverables.
 ---
 
 # Management Consultant Deck
 
-Inspired by Barbara Minto's **pyramid principle** and top-tier consulting storyline discipline.
+**Storyline layer** for top-tier consulting clarity. Always hand off to `presentation-architect` for PPTX production.
 
-## Standard storyline (default)
+Deep playbook: [references/consulting-playbook.md](references/consulting-playbook.md)
 
-| # | Section | Purpose |
-|---|---------|---------|
-| 1 | **Executive summary** | Answer first — recommendation in 3 bullets |
-| 2 | **Context / situation** | Facts the audience agrees on |
-| 3 | **Complication / problem** | Why status quo fails |
-| 4 | **Analysis** | Evidence — charts, frameworks, benchmarks |
-| 5 | **Insights** | "So what" — 3–5 implications |
-| 6 | **Recommendations** | Specific actions, owners, timing |
-| 7 | **Next steps** | Immediate 30/60/90 plan |
-| 8 | **Appendix** | Backup slides (optional) |
+## Deck type routing
 
-## Rules
+| User says | Use structure |
+|-----------|---------------|
+| Strategy / recommendation | Standard pyramid (below) |
+| Pitch to **client** (services) | Proposal structure in playbook |
+| Due diligence / market study | DD structure in playbook |
+| Board update | Board structure in playbook |
+| Investor fundraising | Use `pitch-deck-architect` instead |
 
-- **Answer first** — exec summary is not a teaser
-- **MECE** — buckets don't overlap; together they cover the space
-- **One slide = one insight** — title states the insight, not the topic
-- **Chart titles are sentences** — "Churn rose 12% in Q3" not "Churn chart"
-- **Footnotes** for sources; no unsourced claims in client decks
+## Standard pyramid storyline
 
-## Frameworks to apply when relevant
+| # | Section | Slide title style |
+|---|---------|-------------------|
+| 1 | Executive summary | "We recommend [X] to achieve [Y] by [when]" |
+| 2 | Situation | Factual context sentence |
+| 3 | Complication | Why status quo is unsustainable |
+| 4 | Key question | Single governing question |
+| 5–8 | Analysis | **Action titles** — one insight each |
+| 9 | Synthesis | "These findings imply…" |
+| 10 | Recommendations | Numbered actions with owners |
+| 11 | Roadmap | 30/60/90 or wave plan |
+| 12 | Risks | Top 3 risks + mitigations |
+| 13 | Next steps | Immediate actions |
+| A | Appendix | Backup exhibits |
 
-- Issue tree / logic tree
-- 2×2 matrices
-- Waterfall / bridge charts for variance
-- Porter, SWOT (only if analysis section — not decoration)
+## Non-negotiable rules
 
-## Handoff to Presentation Architect
+1. **Answer first** — exec summary contains the recommendation, not a preview
+2. **MECE** — every grouping passes mutual exclusivity + collective exhaustiveness
+3. **Action titles** — titles are complete sentences; body supports the title
+4. **One insight per slide** — split before adding bullets
+5. **Sources** — footnote every external number
+6. **Exhibit discipline** — appendix for detail; main flow stays clean
 
-After storyline is approved in Markdown:
+## Firm flavor (optional)
 
-1. `management-consultant-deck` → `outputs/storyline.md`
-2. `presentation-architect` → PPTXGenJS + speaker notes
-3. Brand tokens from `design-systems/` if client-branded
+Ask or infer:
 
-## Output
+- **McKinsey-like** — issue trees, waterfalls, exhibit numbers
+- **BCG-like** — 2×2 matrices, bold chapter slides
+- **Bain-like** — results metrics, implementation emphasis
 
-`outputs/consulting-deck-outline.md` with slide titles as **complete sentences** and explicit chart type per analysis slide.
+Apply visual brand from client or `design-systems/`; default to neutral business theme in `deck-theme.ts`.
+
+## Workflow
+
+```text
+1. Clarify: audience, decision, deck type, time limit
+2. Draft outputs/consulting/storyline.md (action titles only)
+3. User approval on storyline
+4. presentation-architect → deck.pptx
+5. QA via business-deck-standards checklist
+```
+
+## Output format (`storyline.md`)
+
+```markdown
+# [Project] — Consulting Deck Storyline
+
+## Executive summary
+- Recommendation bullet 1
+- Recommendation bullet 2
+- Recommendation bullet 3
+
+## Slide 5: [Action title as full sentence]
+- Supporting point
+- Supporting point
+**Visual:** waterfall chart | 2x2 | issue tree
+**Source:** ...
+**Speaker note:** ...
+```
+
+## Anti-patterns
+
+- Topic titles ("Market overview")
+- Framework slides with no "so what"
+- Recommendations without owners or timing
+- Hiding the answer until slide 20

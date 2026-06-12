@@ -1,12 +1,13 @@
 {
-  "version": 1,
-  "description": "Design Cursor config — presentations, carousels, Remotion video, brand docs",
+  "version": 2,
+  "description": "Design Cursor config — business presentations, pitch decks, consulting decks, carousels, Remotion video",
   "preinstalled_skills": {
-    "count": 10,
+    "count": 11,
     "custom": [
+      "pitch-deck-architect",
       "presentation-architect",
-      "carousel-architect",
       "management-consultant-deck",
+      "carousel-architect",
       "demo-video-remotion"
     ],
     "vendored": [
@@ -17,6 +18,20 @@
       "graphify",
       "find-skills"
     ]
+  },
+  "presentation": {
+    "storyline_skills": ["pitch-deck-architect", "management-consultant-deck"],
+    "build_skill": "presentation-architect",
+    "references": [
+      ".cursor/skills/presentation-architect/references/business-deck-standards.md",
+      ".cursor/skills/management-consultant-deck/references/consulting-playbook.md"
+    ],
+    "templates": [
+      "templates/pptx/deck-theme.ts",
+      "templates/deck-outlines/pitch-deck.md",
+      "templates/deck-outlines/consulting-deck.md"
+    ],
+    "playbook": "docs/PRESENTATION_PLAYBOOK.md"
   },
   "design_systems": [
     "design-systems/stamped-energy-main-website.md",

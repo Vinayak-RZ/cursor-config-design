@@ -1,6 +1,6 @@
 # cursor-config-design
 
-A version-controlled **Cursor AI configuration** for design and deliverables: PowerPoint decks, social carousels, Remotion demo videos, and brand-consistent visual work.
+A version-controlled **Cursor AI configuration** for design and deliverables: **business-presentation-grade decks** (investor pitches, McKinsey-style consulting, sales/board updates), social carousels, Remotion demo videos, and brand-consistent visual work.
 
 **Local path:** `D:\Startups\cursor-config-design`
 
@@ -32,17 +32,18 @@ A version-controlled **Cursor AI configuration** for design and deliverables: Po
 | Aspect | Value |
 |--------|-------|
 | **Mode** | Design & deliverables — not backend engineering |
-| **Custom skills** | 4 (presentation, carousel, consulting deck, demo video) |
+| **Custom skills** | 5 (pitch, presentation, consulting, carousel, demo video) |
 | **Vendored skills** | 6 (Remotion, impeccable, GSAP, etc.) |
 | **Brand docs** | Stamped Energy + Content OS in `design-systems/` |
 | **Default outputs** | `outputs/` (pptx, png, mp4, outlines) |
 
 Open this repo in Cursor when you want to:
 
-- Turn Markdown into **editable PowerPoint** (PPTXGenJS)
+- Build **investor pitch decks** with fundraising narrative discipline
+- Produce **McKinsey/BCG/Bain-grade consulting decks** (pyramid, action titles, MECE)
+- Turn approved storylines into **editable, business-quality PowerPoint** (PPTXGenJS)
 - Build **LinkedIn/Instagram carousels** (Satori → PNG)
 - Produce **demo videos** (Remotion)
-- Apply **McKinsey-style** storyline discipline
 - Stay on-brand using your **personal design docs**
 
 ---
@@ -51,9 +52,11 @@ Open this repo in Cursor when you want to:
 
 | Item | Count / detail |
 |------|----------------|
-| Pre-installed skills | **10** |
-| Rules | **3** (`design-mode`, `design-stack`, `skill-routing`) |
+| Pre-installed skills | **11** |
+| Rules | **4** (`design-mode`, `design-stack`, `skill-routing`, `presentation-quality-gates`) |
 | Design system files | **3** + README |
+| Presentation playbook | [docs/PRESENTATION_PLAYBOOK.md](docs/PRESENTATION_PLAYBOOK.md) |
+| PPTX theme template | [templates/pptx/deck-theme.ts](templates/pptx/deck-theme.ts) |
 | Stack doc | [docs/DESIGN_STACK.md](docs/DESIGN_STACK.md) |
 | Brief template | [templates/brief-input.md](templates/brief-input.md) |
 
@@ -81,8 +84,9 @@ Tell the agent: *"Use Stamped Energy brand from design-systems"* or *"Content OS
 
 | Skill | Purpose |
 |-------|---------|
-| `presentation-architect` | Markdown → slide outline → PPTXGenJS + speaker notes + chart suggestions |
-| `management-consultant-deck` | Pyramid principle storyline (exec summary → recommendations) |
+| `pitch-deck-architect` | Investor/fundraising storyline — problem, traction, ask |
+| `management-consultant-deck` | McKinsey/BCG/Bain pyramid storyline — action titles, MECE, exhibits |
+| `presentation-architect` | Business-grade PPTXGenJS build — charts, speaker notes, visual QA |
 | `carousel-architect` | Article → hook + slides → 1080×1350 PNG (Satori/Resvg) |
 | `demo-video-remotion` | Script → storyboard → Remotion MP4 |
 
@@ -119,23 +123,28 @@ Details: [docs/DESIGN_STACK.md](docs/DESIGN_STACK.md)
 
 ## Content pipeline
 
+### Presentations (pitch & consulting)
+
 ```text
-Markdown brief
+Brief / Markdown
     ↓
-management-consultant-deck (optional — strategy decks)
+pitch-deck-architect  OR  management-consultant-deck  (storyline + approval)
     ↓
-presentation-architect / carousel-architect / demo-video-remotion
+presentation-architect  (PPTXGenJS + deck-theme.ts + business-deck-standards)
     ↓
-Brand tokens from design-systems/
+presentation-quality-gates checklist
     ↓
-outputs/
-  ├── deck.pptx
-  ├── carousel/slide-01.png …
-  ├── video/demo.mp4
-  └── outline.md + speaker-notes.md
+outputs/pitch/deck.pptx  OR  outputs/consulting/deck.pptx
 ```
 
-The bottleneck is not slide generation — it is **content → structure → layout → design**. Skills enforce that order.
+### Other deliverables
+
+```text
+carousel-architect → outputs/carousel/*.png
+demo-video-remotion → outputs/video/demo.mp4
+```
+
+The bottleneck is not slide generation — it is **content → structure → layout → design**. Skills enforce that order. Full guide: [docs/PRESENTATION_PLAYBOOK.md](docs/PRESENTATION_PLAYBOOK.md).
 
 ---
 
@@ -171,16 +180,24 @@ Start from [templates/brief-input.md](templates/brief-input.md) or paste your Ma
 ### Investor pitch (PPTX)
 
 ```text
-Use presentation-architect. Brand: Stamped Energy (design-systems).
-Input: [paste Markdown]. Output: outputs/investor-deck.pptx with speaker notes.
-Use Recharts-friendly data shapes for the traction slide.
+Use pitch-deck-architect for storyline, then presentation-architect for PPTX.
+Seed stage, 12 slides, Stamped Energy brand. Real traction: [metrics].
+Output: outputs/pitch/deck.pptx with speaker notes. Flag [TBD] where data missing.
 ```
 
 ### Consulting deck
 
 ```text
 Use management-consultant-deck for storyline, then presentation-architect for PPTX.
-Topic: market entry for B2B solar in Texas. McKinsey-style titles as full sentences.
+Topic: market entry for B2B solar in Texas. McKinsey-style action titles as full sentences.
+Deliver outputs/consulting/storyline.md first; build PPTX after I approve.
+```
+
+### Board / sales update
+
+```text
+Use presentation-architect. 8 slides, neutral brand from deck-theme.ts.
+Insight titles, one chart per data slide, speaker notes on every slide.
 ```
 
 ### LinkedIn carousel
@@ -227,8 +244,10 @@ Requires Windows junction support (Developer Mode or Admin).
 
 | I want… | Skill / action |
 |---------|----------------|
-| PowerPoint file | `presentation-architect` + PPTXGenJS |
-| Strategy storyline | `management-consultant-deck` |
+| Investor pitch | `pitch-deck-architect` → `presentation-architect` |
+| Consulting / strategy deck | `management-consultant-deck` → `presentation-architect` |
+| Business PowerPoint | `presentation-architect` + `deck-theme.ts` |
+| Presentation quality bar | `business-deck-standards.md` + `presentation-quality-gates` |
 | Instagram/LinkedIn carousel | `carousel-architect` |
 | Demo MP4 | `demo-video-remotion` |
 | Stamped Energy colors | `design-systems/stamped-energy-main-website.md` |

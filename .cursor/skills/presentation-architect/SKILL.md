@@ -1,77 +1,102 @@
 ---
 name: presentation-architect
-description: Transforms Markdown into structured slide decks with titles, speaker notes, visual hierarchy, chart suggestions, and deliverables via PPTXGenJS and/or Remotion. Use when creating pitch decks, client presentations, investor updates, or any slide-based output from written content.
+description: Produces business-presentation-grade slide decks via PPTXGenJS — consulting action titles, investor-quality layout, speaker notes, charts, and QA. Use when building any professional PPTX, after storyline skills, or when user asks for PowerPoint, slides, or presentation files.
 ---
 
 # Presentation Architect
 
+**Production layer** — turns approved storyline into a polished, editable `.pptx`. Works with `management-consultant-deck`, `pitch-deck-architect`, or raw Markdown.
+
 ## Pipeline
 
 ```text
-Markdown input
-    → Extract key ideas (1 idea per slide max)
-    → Slide outline (titles + bullets)
-    → Visual hierarchy + layout notes
-    → Chart suggestions (Recharts/Tremor data shapes)
-    → Speaker notes
-    → Deliverables:
-        • presentation.pptx (PPTXGenJS) — editable in PowerPoint/Slides
-        • optional Remotion composition — motion/video export
+Approved outline (from storyline skill or Markdown)
+    → Apply business-deck-standards
+    → Build PPTXGenJS with deck-theme.ts masters
+    → Charts (data → slide charts)
+    → Speaker notes per slide
+    → QA checklist
+    → outputs/.../deck.pptx
 ```
 
-## Before generating
+## Before building
 
-1. Ask which **brand** applies — read [design-systems/](../../../design-systems/) if Stamped Energy or Content OS
-2. Confirm output: **PPTX only**, **Remotion only**, or **both**
-3. Confirm audience: investor, client, internal, educational
+1. **Deck type:** consulting | pitch | business update | sales | training
+2. **Brand:** `neutral` | `stampedEnergy` | `contentOs` — see `templates/pptx/deck-theme.ts`
+3. Read [business-deck-standards.md](references/business-deck-standards.md)
 
-## Slide structure rules
-
-- **One message per slide** — if two ideas, split
-- Title: outcome-oriented, not topic label ("Revenue grew 40%" not "Revenue")
-- Body: 3–5 bullets max; use sub-slides before shrinking font
-- Speaker notes: what to say, not what's on the slide
-- Visual suggestion: chart type, icon, diagram, or full-bleed image per slide
-
-## PPTXGenJS (default for .pptx)
+## PPTXGenJS workflow
 
 ```typescript
-import pptxgen from "pptxgenjs";
+import { createDeck, addTitleSlide, addInsightSlide, addSectionSlide, writeDeck } from "./deck-theme";
 
-const pptx = new pptxgen();
-pptx.layout = "LAYOUT_16x9";
-
-const slide = pptx.addSlide();
-slide.addText("Title", { x: 0.5, y: 0.4, w: 9, h: 0.8, fontSize: 28, bold: true });
-// Use brand hex from design-systems when applicable
-
-await pptx.writeFile({ fileName: "outputs/deck.pptx" });
+const { pptx, brand } = createDeck("stampedEnergy");
+addTitleSlide(pptx, brand, "Insight title on cover", "Subtitle / date");
+addSectionSlide(pptx, brand, "Analysis");
+addInsightSlide(pptx, brand, "Revenue grew 40% YoY driven by enterprise expansion", [
+  "Enterprise ARR up 62%",
+  "Net retention 118%",
+  "CAC payback 11 months",
+], "Source: Company data; Q3 2025");
+await writeDeck(pptx, "outputs/deck.pptx");
 ```
 
-- Use inches for `x,y,w,h` (PPTXGenJS default)
-- Map brand colors from design doc tokens
-- Export to `outputs/` unless user specifies path
+Copy theme from [templates/pptx/deck-theme.ts](../../../templates/pptx/deck-theme.ts) into the working project; `npm install pptxgenjs`.
 
-## Design system defaults
+## Chart slides
 
-| Layer | Library |
-|-------|---------|
-| Layout tokens | Tailwind CSS (in Remotion/web previews) |
-| Components | shadcn/ui patterns for cards, pricing, testimonials |
-| Charts | Recharts (startup metrics) or Tremor (SaaS dashboards) |
+```typescript
+slide.addChart(pptx.ChartType.bar, chartData, {
+  x: 0.5, y: 1.5, w: 9, h: 3.5,
+  showTitle: false,
+  chartColors: [brand.accent],
+});
+```
 
-## Remotion (when video/motion export needed)
+Chart title on slide = insight sentence (not duplicated as chart internal title).
 
-Load skill `remotion-best-practices`. One composition per deck or per chapter.
+## Layout selection
 
-## Output checklist
+| Content | Layout |
+|---------|--------|
+| Section break | `addSectionSlide` |
+| Insight + bullets | `addInsightSlide` |
+| Insight + chart | action title + `addChart` |
+| Comparison | two-column text or 2×2 table |
+| Quote | large italic + attribution |
 
-- [ ] `outputs/outline.md` — slide map
-- [ ] `outputs/speaker-notes.md` or embedded in PPTX
-- [ ] `outputs/deck.pptx` and/or Remotion project files
-- [ ] Chart data as JSON/CSV if charts suggested
+## Speaker notes
+
+Every slide gets notes: **what to say**, transition to next slide, anticipated questions.
+
+```typescript
+slide.addNotes("Open with the headline number. Pause. Then walk the three drivers...");
+```
+
+## Quality gate (required before delivery)
+
+Run checklist in [business-deck-standards.md](references/business-deck-standards.md):
+
+- Insight titles, font minimums, margins, sources, notes on all slides
+- Open output file path and confirm write succeeded
+
+## Outputs
+
+| File | Required |
+|------|----------|
+| `outputs/<name>/outline.md` | Yes |
+| `outputs/<name>/deck.pptx` | Yes |
+| `outputs/<name>/speaker-notes.md` | If not embedded in PPTX |
+| `outputs/<name>/chart-data.json` | If charts |
 
 ## Pair with
 
-- `management-consultant-deck` — McKinsey/BCG-style storyline
-- `impeccable` — visual polish pass on HTML previews
+| Skill | Role |
+|-------|------|
+| `management-consultant-deck` | Consulting storyline |
+| `pitch-deck-architect` | Investor storyline |
+| `impeccable` | Optional HTML proof preview |
+
+## Optional
+
+Remotion export for video — load `demo-video-remotion` + `remotion-best-practices`.

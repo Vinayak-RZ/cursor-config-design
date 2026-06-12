@@ -1,0 +1,38 @@
+---
+description: Quality gates for business presentations, pitch decks, and consulting decks before delivery
+globs: "**/outputs/**,**/templates/**,**/*deck*,**/*pitch*,**/*presentation*"
+alwaysApply: false
+---
+
+# Presentation quality gates
+
+Before marking a deck **done**, verify:
+
+## Story
+
+- [ ] Every slide title is an **insight** (consulting: action title; pitch: outcome-oriented)
+- [ ] Executive summary / ask appears in first 3 slides where applicable
+- [ ] MECE structure for consulting sections
+- [ ] Appendix holds backup — not main narrative clutter
+
+## Visual
+
+- [ ] 16:9, margins ≥ 0.5", body font ≥ 16pt
+- [ ] Consistent brand from `deck-theme.ts` or design-systems
+- [ ] Charts: titled with insight, labeled axes, sourced
+
+## Deliverables
+
+- [ ] `deck.pptx` exists and path reported to user
+- [ ] Speaker notes on every slide (in PPTX or separate md)
+- [ ] `outline.md` / `storyline.md` committed to outputs folder
+
+## Skills used
+
+| Deck type | Storyline skill | Build skill |
+|-----------|-----------------|-------------|
+| Consulting | `management-consultant-deck` | `presentation-architect` |
+| Investor pitch | `pitch-deck-architect` | `presentation-architect` |
+| General business | outline in chat | `presentation-architect` |
+
+Do not deliver bullet-only outlines without PPTX unless user explicitly asked for outline-only.
