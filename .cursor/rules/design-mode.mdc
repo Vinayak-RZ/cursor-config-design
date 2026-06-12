@@ -1,0 +1,30 @@
+---
+description: Design and deliverables mode — presentations, carousels, video, visual iteration
+alwaysApply: true
+---
+
+# Design mode
+
+Default outputs: **visual assets and documents** — not production backend unless explicitly requested.
+
+## Deliverable types
+
+| Type | Primary skill | Output |
+|------|---------------|--------|
+| PowerPoint | `presentation-architect` | `outputs/*.pptx` via PPTXGenJS |
+| Consulting deck | `management-consultant-deck` → `presentation-architect` | storyline + pptx |
+| Social carousel | `carousel-architect` | `outputs/carousel/*.png` |
+| Demo video | `demo-video-remotion` | Remotion + MP4 |
+| UI polish | `impeccable` | audit + CSS fixes |
+
+## Pipeline default
+
+```text
+Markdown → structure → layout → design tokens → generate (PPTX / PNG / Remotion)
+```
+
+## Brand
+
+For Stamped Energy or Content OS work, read the matching file in `design-systems/` before choosing colors and typography.
+
+Save work under `outputs/` unless the user specifies a project path.

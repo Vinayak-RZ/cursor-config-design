@@ -1,0 +1,21 @@
+---
+description: Library choices for decks, carousels, charts, and video in this config
+alwaysApply: false
+---
+
+# Design stack
+
+| Need | Library | Notes |
+|------|---------|-------|
+| Editable PowerPoint | **PPTXGenJS** | Real `.pptx` for clients |
+| Demo / motion video | **Remotion** | React → MP4; skill `remotion-best-practices` |
+| Carousel PNG | **Satori** + **Resvg** | HTML/CSS → SVG → PNG |
+| Design tokens / layout | **Tailwind CSS** | Spacing, type scale |
+| UI components | **shadcn/ui** | Cards, pricing, testimonials in decks |
+| Charts | **Recharts** or **Tremor** | Metrics, investor slides |
+| Scroll motion (web) | **GSAP** | `gsap-framer-scroll-animation` skill |
+| Visual audit | **impeccable** | Polish pass |
+
+Full reference: [docs/DESIGN_STACK.md](../../docs/DESIGN_STACK.md)
+
+Do not substitute Google Slides API when user asked for a **downloadable PPTX** — use PPTXGenJS.

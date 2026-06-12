@@ -1,0 +1,15 @@
+---
+description: Route design tasks to the correct skill
+alwaysApply: false
+---
+
+# Design skill routing
+
+| User intent | Skill |
+|-------------|-------|
+| Pitch deck, slides, PPT, PowerPoint | `presentation-architect` |
+| McKinsey/BCG style strategy deck | `management-consultant-deck` then `presentation-architect` |
+| LinkedIn / Instagram carousel | `carousel-architect` |
+| Product demo video, explainer MP4 | `demo-video-remotion` + `remotion-best-practices` |
+| Polish existing UI | `impeccable` |
+| Map design docs / content | `graphify` on `design-systems/` or brief folder |

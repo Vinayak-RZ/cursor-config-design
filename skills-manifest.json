@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "description": "Design Cursor config — presentations, carousels, Remotion video, brand docs",
+  "preinstalled_skills": {
+    "count": 10,
+    "custom": [
+      "presentation-architect",
+      "carousel-architect",
+      "management-consultant-deck",
+      "demo-video-remotion"
+    ],
+    "vendored": [
+      "remotion-best-practices",
+      "impeccable",
+      "emil-design-eng",
+      "gsap-framer-scroll-animation",
+      "graphify",
+      "find-skills"
+    ]
+  },
+  "design_systems": [
+    "design-systems/stamped-energy-main-website.md",
+    "design-systems/stamped-energy-how-it-works-dock.md",
+    "design-systems/content-os.md"
+  ],
+  "stack": {
+    "pptx": "pptxgenjs",
+    "video": "remotion",
+    "carousel": ["satori", "@resvg/resvg-js"],
+    "styling": ["tailwindcss", "shadcn/ui"],
+    "charts": ["recharts", "@tremor/react"]
+  }
+}
