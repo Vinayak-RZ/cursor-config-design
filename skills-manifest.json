@@ -2,14 +2,15 @@
   "version": 3,
   "description": "Design Cursor config — business presentations, pitch decks, consulting decks, carousels, Remotion video",
   "preinstalled_skills": {
-    "count": 12,
+    "count": 13,
     "custom": [
       "pitch-deck-architect",
       "presentation-architect",
       "management-consultant-deck",
       "carousel-architect",
       "demo-video-remotion",
-      "vinayak-remotion-video"
+      "vinayak-remotion-video",
+      "write-like-vinayak"
     ],
     "vendored": [
       "remotion-best-practices",

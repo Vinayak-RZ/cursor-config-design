@@ -19,6 +19,7 @@ You are in **design & deliverables mode**: business presentations, pitch decks, 
 | `carousel-architect` | Social PNG carousels (Satori/Resvg) |
 | `demo-video-remotion` | Product demo videos — script, storyboard, render plan |
 | `vinayak-remotion-video` | Premium Remotion motion, layout, pacing (settle-then-hold, SCALE, springs) |
+| `write-like-vinayak` | Copy he will sign or publish. Read `stamped.md` in that folder when the subject is Stamped |
 
 **Deck workflow:** storyline skill first → user approval → `presentation-architect` → quality gates.
 

@@ -32,7 +32,7 @@ A version-controlled **Cursor AI configuration** for design and deliverables: **
 | Aspect | Value |
 |--------|-------|
 | **Mode** | Design & deliverables — not backend engineering |
-| **Custom skills** | 6 (pitch, presentation, consulting, carousel, demo video, Remotion motion) |
+| **Custom skills** | 7 (pitch, presentation, consulting, carousel, demo video, Remotion motion, Vinayak's voice) |
 | **Vendored skills** | 6 (Remotion, impeccable, GSAP, etc.) |
 | **Brand docs** | Stamped Energy + Content OS in `design-systems/` |
 | **Default outputs** | `outputs/` (pptx, png, mp4, outlines) |
@@ -52,7 +52,7 @@ Open this repo in Cursor when you want to:
 
 | Item | Count / detail |
 |------|----------------|
-| Pre-installed skills | **12** |
+| Pre-installed skills | **13** |
 | Rules | **4** (`design-mode`, `design-stack`, `skill-routing`, `presentation-quality-gates`) |
 | Design system files | **3** + README |
 | Presentation playbook | [docs/PRESENTATION_PLAYBOOK.md](docs/PRESENTATION_PLAYBOOK.md) |
@@ -90,6 +90,7 @@ Tell the agent: *"Use Stamped Energy brand from design-systems"* or *"Content OS
 | `carousel-architect` | Article → hook + slides → 1080×1350 PNG (Satori/Resvg) |
 | `demo-video-remotion` | Script → storyboard → Remotion render plan |
 | `vinayak-remotion-video` | Premium motion craft — settle-then-hold, SCALE, springs, layout |
+| `write-like-vinayak` | Copy he will sign or publish. For Stamped, read `stamped.md` in that skill first |
 
 ### Pre-installed (vendored)
 
